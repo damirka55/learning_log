@@ -8,5 +8,10 @@ from . import views
 
 app_name = 'users'
 urlpatterns = [
-    path('regist/', views.regist, name='regist')
+    #Страница регистрации.
+    path('regist/', views.regist, name='regist'),
+    
+    #Страница выхода.
+    path('logout/', views.logout_view, name='logout'),
 ]
+
