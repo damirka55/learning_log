@@ -6,15 +6,12 @@
     <p>Your username and password didn`t match. Please try again.</p>
   {% endif %}
   
-  <form  method="post" action="{% url 'user:login' %}">
+  <form  method="post" action="{% url 'users:regist' %}">
     {% csrf_token %}
     {{ form.as_p }}
     
-    <button name="submit">log in</button>
-    <input type="hidden" name="next" value="{% url 'users:login' %}">
+    <button name="submit">Регистрация</button>
+    <input type="hidden" name="next" value="{% url 'users:regist' %}">
   </form>
   
 {% endblock content %}
-
-
-!!!Сделать так, чтобы появилось поле для ввода.
