@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
@@ -10,6 +11,7 @@ def index(request):
     """Домашняя страница приложения Learning Log."""
     return render(request, 'learning_logs/index.html')
     
+@login_required
 def topics(request):
     """Выводит список тем."""
     topics = Topic.objects.order_by('date_added')

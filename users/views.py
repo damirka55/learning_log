@@ -14,10 +14,6 @@ def login_users(request):
             if user.is_active:
                 login(request, user)
                 return HttpResponseRedirect(reverse('learning_logs:index'))
-            else:
-                return HttpResponseRedirect(reverse('learning_logs:topics'))
-        else:
-            return HttpResponseRedirect(reverse('learning_logs:topics'))
     else:
         form = AuthenticationForm()
     
