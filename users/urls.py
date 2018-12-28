@@ -8,6 +8,9 @@ from . import views
 
 app_name = 'users'
 urlpatterns = [
+    #Страница входа.
+    path('login/', views.login_users, name='login'),
+
     #Страница регистрации.
     path('regist/', views.regist, name='regist'),
     
