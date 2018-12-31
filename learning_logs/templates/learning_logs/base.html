@@ -1,13 +1,17 @@
-<p>
-    <a href="{% url 'learning_logs:index' %}">Learning Log</a> -
-    <a href="{% url 'learning_logs:topics' %}">Topics</a> - 
-    {% if user.is_authenticated %}
-      Hello, {{ user.username }}.
-      <a href="{% url 'users:logout' %}">Выход</a>
-    {% else %}
-      <a href="{% url 'users:regist' %}">Регистрация</a>/ 
-      <a href="{% url 'users:login' %}">Вход</a>
-    {% endif %}
-</p>
+{% load bootstrap3 %}
 
-{% block content %}{% endblock content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="urf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Learning Log</title>
+    
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    
+  </head>
+
+</html> 
